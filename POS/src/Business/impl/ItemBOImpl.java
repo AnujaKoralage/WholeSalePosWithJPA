@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 public class ItemBOImpl implements ItemBO {
     private ItemDAOImpl itemDAO = DAOFactory.getInstance().getDAO(DAOTypes.ITEM);
-    private EntityManager session = EntityManagerUtil.getManager();
+    private EntityManager session = EntityManagerUtil.getInstance().getManager();
 
     public List<ItemDTO> getAllItems() throws Exception {
 

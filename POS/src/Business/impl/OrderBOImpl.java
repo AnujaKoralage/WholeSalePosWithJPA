@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 public class OrderBOImpl implements OrderBO {
 
 public String qtyGetByCode(String itemcode){
-    EntityManager session = EntityManagerUtil.getManager();
+    EntityManager session = EntityManagerUtil.getInstance().getManager();
     OrderDetailsDAOImpl orderDetailsDAO = new OrderDetailsDAOImpl();
     orderDetailsDAO.setSession(session);
     return orderDetailsDAO.getQtyByCode(itemcode);
@@ -32,7 +32,7 @@ public String qtyGetByCode(String itemcode){
 
     public void insertOrderDetails(OrderDetailsDTO orderDetailsDTO) throws Exception {
 
-    EntityManager entityManager = EntityManagerUtil.getManager();
+    EntityManager entityManager = EntityManagerUtil.getInstance().getManager();
 
         entityManager.getTransaction().begin();
         OrderDetailsDAOImpl dao = DAOFactory.getInstance().getDAO(DAOTypes.ORDER);
@@ -43,7 +43,7 @@ public String qtyGetByCode(String itemcode){
     }
 
     public void insertOrderItems(OrderDetailsDTO orderDetailsDTO) throws Exception {
-    EntityManager entityManager = EntityManagerUtil.getManager();
+    EntityManager entityManager = EntityManagerUtil.getInstance().getManager();
         entityManager.getTransaction().begin();
         OrderItemsDAOImpl dao = DAOFactory.getInstance().getDAO(DAOTypes.ORDER_ITEMS);
         dao.setSession(entityManager);
@@ -54,7 +54,7 @@ public String qtyGetByCode(String itemcode){
     }
 
     public void updateItemQty(String qtyOnHand, String itemcode){
-        EntityManager session = EntityManagerUtil.getManager();
+        EntityManager session = EntityManagerUtil.getInstance().getManager();
             session.getTransaction().begin();
             OrderItemsDAOImpl dao = DAOFactory.getInstance().getDAO(DAOTypes.ORDER_ITEMS);
             dao.setSession(session);
@@ -64,7 +64,7 @@ public String qtyGetByCode(String itemcode){
     }
 
     public List<ItemDTO> allItems() throws Exception {
-        EntityManager entityManager = EntityManagerUtil.getManager();
+        EntityManager entityManager = EntityManagerUtil.getInstance().getManager();
         ItemDAOImpl dao = DAOFactory.getInstance().getDAO(DAOTypes.ITEM);
         dao.setSession(entityManager);
 
@@ -86,7 +86,7 @@ public String qtyGetByCode(String itemcode){
     }
 
     public ObservableList getAllCustomerId(ObservableList list) throws SQLException {
-        EntityManager entityManager = EntityManagerUtil.getManager();
+        EntityManager entityManager = EntityManagerUtil.getInstance().getManager();
         CustomerDAOImpl dao = DAOFactory.getInstance().getDAO(DAOTypes.CUSTOMER);
         dao.setEntityManager(entityManager);
         ObservableList id = dao.getId(list);

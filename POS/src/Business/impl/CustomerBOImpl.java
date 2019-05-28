@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 public class CustomerBOImpl implements CustomerBO {
 
     private CustomerDAOImpl customerDAO = DAOFactory.getInstance().getDAO(DAOTypes.CUSTOMER);
-    private EntityManager session = EntityManagerUtil.getManager();
+    private EntityManager session = EntityManagerUtil.getInstance().getManager();
 
     public List<CustomerDTO> allCustomers() throws Exception {
         customerDAO.setEntityManager(session);

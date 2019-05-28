@@ -12,7 +12,18 @@ import java.util.Properties;
 
 public class EntityManagerUtil {
 
-    public static EntityManager getManager (){
+    private static EntityManagerUtil entityManagerUtil;
+
+    private EntityManagerUtil(){
+
+    }
+
+    public static EntityManagerUtil getInstance(){
+        entityManagerUtil = new EntityManagerUtil();
+        return entityManagerUtil;
+    }
+
+    private EntityManagerFactory getFactory (){
         File file = new File("POS\\resources\\application.properties");
         Properties properties = new Properties();
         try {
@@ -26,7 +37,12 @@ public class EntityManagerUtil {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("unit1",properties);
 
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        return entityManagerFactory;
+
+    }
+    public EntityManager getManager(){
+        EntityManagerFactory factory = entityManagerUtil.getFactory();
+        EntityManager entityManager = factory.createEntityManager();
         return entityManager;
     }
 
