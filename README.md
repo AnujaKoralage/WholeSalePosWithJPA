@@ -1,4 +1,4 @@
-# ThogaKadePosWithJPA
+# WholeSalePosWithJPA
 
 ## Getting Started
 
@@ -20,8 +20,9 @@ Clone the project via Intellil IDEA and import
 ## Technological Stack
 
 - JPA
-- Layered Architecture
-- Singleton, Factory, DAO, DTO, Strategy design patterns
+- JavaFX
+- JDBC
+- Jasper
 - MySql
 
 ## Authors
