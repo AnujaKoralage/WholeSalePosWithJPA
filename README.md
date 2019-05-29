@@ -53,6 +53,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Anuja Koralage - [@your_linkedin](https://www.linkedin.com/in/anuja-koralage-a2550a143/) - anujakoralage@gmail.com
+Anuja Koralage - [@linkedin](https://www.linkedin.com/in/anuja-koralage-a2550a143/) - anujakoralage@gmail.com
 
 Project Link: [https://github.com/AnujaKoralage/WholeSalePosWithJPA.git](https://github.com/AnujaKoralage/WholeSalePosWithJPA.git)
