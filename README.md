@@ -1,8 +1,16 @@
 # WholeSalePosWithJPA
 
-## Getting Started
+### Installation
 
-Clone the project via Intellil IDEA and import
+1. Initialize git repository
+```sh
+git init
+```
+2. Clone the repo
+```sh
+git clone https://github.com/AnujaKoralage/WholeSalePosWithJPA.git
+```
+3. Import project via Intellij Idea
 
 ## Prerequisites
 
